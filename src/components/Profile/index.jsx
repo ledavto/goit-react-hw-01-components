@@ -1,12 +1,9 @@
-import user from '../Profile/user'
-{/* <Profile
-  username={user.username}
-  tag={user.tag}
-  location={user.location}
-  avatar={user.avatar}
-    stats={user.stats} /> */}
-  
-const Profile = props =>(
+import user from './user.json'
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+export const Profile = props =>(
 <div class="profile">
   <div class="description">
             <img
@@ -19,18 +16,19 @@ const Profile = props =>(
     <p class="location">{user.location}</p>
   </div>
 
-  <ul class="stats">
+        <ul class="stats">
+            
     <li>
-      <span class="label">Followers</span>
-      <span class="quantity">1000</span>
+                <span class="label">Followers</span>
+      <span class="quantity">{user.stats.followers }</span>
     </li>
     <li>
       <span class="label">Views</span>
-      <span class="quantity">2000</span>
+      <span class="quantity">{user.stats.views}</span>
     </li>
     <li>
       <span class="label">Likes</span>
-      <span class="quantity">3000</span>
+      <span class="quantity">{user.stats.likes}</span>
     </li>
   </ul>
 </div>
