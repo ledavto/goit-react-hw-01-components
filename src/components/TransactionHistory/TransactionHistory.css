@@ -1,0 +1,15 @@
+.col-type {
+  width: 300px;
+}
+
+.col-currency {
+  width: 100px;
+}
+
+.col-amount {
+  width: 150px;
+}
+
+.transaction-history thead {
+  background-color: cadetblue;
+}

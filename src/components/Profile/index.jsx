@@ -1,37 +1,29 @@
-import user from './user.json'
+import '../Profile/Profile.css';
 
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 
-export const Profile = props =>(
-<div class="profile">
-  <div class="description">
-            <img
-                src={ user.avatar}
-      alt="User avatar"
-      class="avatar"
-    />
-            <p class="name">{user.username}</p>
-    <p class="tag">{user.tag}</p>
-    <p class="location">{user.location}</p>
+export const Profile = ({ username, tag, location, avatar, stats }) => (
+  <div className="profile">
+    <div className="description">
+      <img src={avatar} className="avatar" alt="User avatar" />
+      <p className="name">{username}</p>
+      <p className="tag">{tag}</p>
+      <p className="location">{location}</p>
+    </div>
+
+    <ul className="stats">
+      <li>
+        <span className="label">Followers</span>
+        <span className="quantity">{stats.followers}</span>
+      </li>
+      <li>
+        <span className="label">Views</span>
+        <span className="quantity">{stats.views}</span>
+      </li>
+      <li>
+        <span className="label">Likes</span>
+        <span className="quantity">{stats.likes}</span>
+      </li>
+    </ul>
   </div>
-
-        <ul class="stats">
-            
-    <li>
-                <span class="label">Followers</span>
-      <span class="quantity">{user.stats.followers }</span>
-    </li>
-    <li>
-      <span class="label">Views</span>
-      <span class="quantity">{user.stats.views}</span>
-    </li>
-    <li>
-      <span class="label">Likes</span>
-      <span class="quantity">{user.stats.likes}</span>
-    </li>
-  </ul>
-</div>
-)
-
-ReactDOM.createRoot(document.getElementById("root")).render(<Profile />);
+);
