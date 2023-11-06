@@ -1,8 +1,6 @@
 import React from 'react';
 import '../FriendList/FriendList.css';
 
-const FriendListItem = ({ avatar, name, isOnline }) => {};
-
 export const FriendList = ({ friends }) => (
   <ul className="friend-list">
     {friends.map(friend => (
